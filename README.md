@@ -19,8 +19,8 @@ Hoje trabalho como Engenheira de Software no Nubank.
 
 - 💌 Email: laisfrigerio.dev@gmail.com
 - 📸 Instagram: [@laisfrigerio](https://www.instagram.com/laisfrigerio/)
-- 💼 LinkedIn: [in/sampaioaanaluiza](https://www.linkedin.com/in/laisfrigerio/)
-- 👩‍💻 Github:[/analuizasampaio](https://github.com/lasifrigerio)
+- 💼 LinkedIn: [in/laisfrigerio](https://www.linkedin.com/in/laisfrigerio/)
+- 👩‍💻 Github:[/laisfrigerio](https://github.com/lasifrigerio)
 
 ### Instruções
 
