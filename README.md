@@ -58,7 +58,7 @@ O que veremos na aula de hoje?
 
   - [Exercícios](#exercícios)
   - [Material da aula](#material-da-aula)
-  - [Links Úteis](#links-úteis)
+  - [Links Úteis](./material/05-links-uteis.md)
 
 ---
 
@@ -70,12 +70,6 @@ O que veremos na aula de hoje?
 ### Material da aula
 
 - [Material](/material)
-
-### Links Úteis
-
-- [refactoring.guru](https://refactoring.guru/pt-br/)
-- [Code Smells](https://refactoring.guru/pt-br/refactoring/smells)
-- [Padrões de Projeto](https://refactoring.guru/pt-br/design-patterns)
 
 <p align="center">
 Desenvolvido com :purple_heart: por laisfrigerio
