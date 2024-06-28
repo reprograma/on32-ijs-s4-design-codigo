@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="assets/reprograma-fundos-claros.png" alt="logo reprograma" width="500">
+  <img src="../../../assets/reprograma-fundos-claros.png" alt="logo reprograma" width="500">
 </h1>
 
 # Tema da Aula
@@ -9,7 +9,7 @@ Turma Online ON32 - Imersão JavaScript | Semana 4 | 2024 | Professora Lais Frig
 ### Professora Lais
 
 <h1>
-  <img src="./assets/lais.png" alt="foto lais" width="200">
+  <img src="../../../assets/lais.png" alt="foto lais" width="200">
 </h1>
 
 Eu sou engenheira de software, professora de programação e compartilho conteúdo técnico em minhas redes sociais!
