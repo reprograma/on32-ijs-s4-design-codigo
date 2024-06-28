@@ -36,6 +36,55 @@ Nessa sessão vamos refatorar e aplicar boas práticas de programação na funç
 
 ### Renomeando funções e variáveis
 
-<video controls autosize="true">
-    <source src="https://github.com/reprograma/on32-ijs-s4-design-codigo/blob/main/assets/01-video-refactor-rename.mov" type="mov" />
-</video>
+![Renomeando as variáveis](../assets/01-code-smell-refactor-rename.png)
+
+- A variável `brand` foi renomeada para `cardBrand`
+- A variável `cardNumbers` foi renomeada para `cardNumber`
+- A variável `installments` foi renomeada para `numberOfInstallments`
+- A variável `dateValidate` foi renomeada para `cardExpirationDate`
+- As variáveis `m` e `y` foram renomeada para `cardExpirationMonth` e `cardExpirationYear` respectivamente
+- A variável `date` foi renomeada para `currentDate`
+- As variáveis `mCurrent` e `yCurrent` foram renomeada para `currentMonth` e `currentYear` respectivamente
+
+### Removendo números mágicos
+
+![Removendo números mágicos](../assets/02-code-smell-refactor-magic-numbers.png)
+
+- As strings literais `visa`, `mastercard` e `amex` foram trocadas por constantes
+- Os números `1` e `12` que representam, respectivamente, o número minímo e máximo de parcelas foram substiuídas por constantes
+
+### Extraindo e reutilizando funções
+
+![Extraindo e reutilizando funções](../assets/03-code-smell-refactor-dry.png)
+
+- As validações de regex foram substituídas pela função `verifyRegex`
+- A logica duplicada de verificar regex foi removida
+- Passamos a reutilizar a função criada
+
+### Removendo if aninhados
+
+![Removendo if aninhados](../assets/04-code-smell-refactor-if-aninhados.png)
+
+- Removemos todos os if aninhados e deixamos apenas 1 nível
+- Deixando o código mais legível e fácil de ler
+
+### Ainda dá para melhorar esse código?
+
+Sim, é possível por exemplo extrair todas as mensagens de erro para constantes, pensando em cenários de reaproveitamento de código, já que essas mensagens podem ser utilizadas em outras partes do meu sistema:
+
+![Criando constantes de erros](../assets/05-code-smell-refactor-improves.png)
+
+É possível também passar um objeto como parâmetro de entrada da função `validCard`, ao invés de 5 parâmetros. Passar um objeto como parâmetro torna a função mais flexível:
+
+![Objeto como parâmetro de função](../assets/06-code-smell-refactor-object-as-parameter.png)
+
+Também é importante seguir padrões de escrita no nomes de funções e variáveis. Escolha um padrão e seja fiel a ele:
+
+- PascalCase
+- camelCase
+- snake_case
+- kebab-case
+
+Na função `validCard`, utilizamos o padrão `SNAKE_CASE` para constantes com todas as letras maiúsculas. Já para funções e variáveis seguimos o padrão `camelCase`.
+
+**Essas alterações tornam o código mais limpo, modular e fácil de entender, seguindo os princípios de clean code e boas práticas de programação!**
