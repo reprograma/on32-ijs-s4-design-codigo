@@ -10,13 +10,83 @@ O princípio DRY (Don't Repeat Yourself) é uma filosofia de design de software 
 
 Duplicação do trecho de verificar regex:
 
-![Código duplicado](../assets/02-code-smell-refactor-magic-numbers.png)
+```typescript
+function validCard(card: CreditCard) {
+  // more code here...
+
+  if (CARD_BRANDS.includes(cardBrand)) {
+    if (cardBrand === CARD_BRAND_AMEX) {
+      if (!/^3[47][0-9]{13}$/.test(cardNumber)) {
+        throw new Error("Invalid card number from amex");
+      } else if (!/^\d{4}$/.test(cvv)) {
+        throw new Error("CVV invalid for Amex");
+      }
+    } else {
+      if (cardBrand === CARD_BRAND_VISA) {
+        if (!/^4[0-9]{15}$/.test(cardNumber)) {
+          throw new Error("Invalid card number from visa");
+        } else if (!/^\d{3}$/.test(cvv)) {
+          throw new Error("CVV invalid for Visa");
+        }
+      } else {
+        if (cardBrand === CARD_BRAND_MASTERCARD) {
+          if (!/^5[1-5][0-9]{14}$/.test(cardNumber)) {
+            throw new Error("Invalid card number from mastercard");
+          } else if (!/^\d{3}$/.test(cvv)) {
+            throw new Error("CVV invalid for Master Card");
+          }
+        }
+      }
+    }
+    // more code here...
+}
+```
 
 ### Depois de aplicar DRY
 
 Extraindo o trecho de código duplicado para dentro da função `verifyRegex` e reutilizando-a:
 
-![Extraindo e reutilizando funções seguindo o princípio DRY](../assets/03-code-smell-refactor-dry.png)
+```typescript
+function verifyRegex(regex, value, errorMessage) {
+  if (!regex.test(value)) {
+    throw new Error(errorMessage);
+  }
+}
+
+function validCard(card: CreditCard) {
+  // more code here...
+
+  if (CARD_BRANDS.includes(cardBrand)) {
+    if (cardBrand === CARD_BRAND_AMEX) {
+      verifyRegex(
+        /^3[47][0-9]{13}$/,
+        cardNumber,
+        "Invalid card number from amex"
+      );
+      verifyRegex(/^\d{4}$/, cvv, "CVV invalid for Amex");
+    } else {
+      if (cardBrand === CARD_BRAND_VISA) {
+        verifyRegex(
+          /^4[0-9]{15}$/,
+          cardNumber,
+          "Invalid card number from visa"
+        );
+        verifyRegex(/^\d{3}$/, cvv, "CVV invalid for Visa");
+      } else {
+        if (cardBrand === CARD_BRAND_MASTERCARD) {
+          verifyRegex(
+            /^5[1-5][0-9]{14}$/,
+            cardNumber,
+            "Invalid card number from mastercard"
+          );
+          verifyRegex(/^\d{3}$/, cvv, "CVV invalid for Master Card");
+        }
+      }
+    }
+
+    // more code here...
+}
+```
 
 ### Benefícios do Princípio DRY:
 
@@ -27,3 +97,7 @@ Extraindo o trecho de código duplicado para dentro da função `verifyRegex` e 
 3. **Redução de Erros:** A duplicação aumenta a probabilidade de erros, pois pode ser fácil esquecer de atualizar todas as cópias do código duplicado. Seguir o DRY ajuda a evitar inconsistências.
 
 ## SOLID
+
+```
+
+```

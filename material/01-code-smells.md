@@ -21,7 +21,58 @@ Detectar e corrigir code smells é uma prática importante na manutenção de so
 
 Análise o seguinte trecho de código e identifique quais são os possíveis "Code Smells". Faça sua análise antes de prosseguir na leitura:
 
-![Trecho de código da função que valida cartão de crédito](../assets/code-smell-example-valid-card.png)
+```typescript
+function validCard(
+  brand: string,
+  cardNumbers: string,
+  installments: number,
+  dateValidate: string,
+  cvv: string
+) {
+  const [m, y] = dateValidate.split("/");
+  const date = new Date();
+  const mCurrent = date.getMonth() + 1;
+  const yCurrent = date.getFullYear() % 100;
+
+  if (brand === "visa" || brand === "mastercard" || brand === "amex") {
+    if (brand === "amex") {
+      if (!/^3[47][0-9]{13}$/.test(cardNumbers)) {
+        throw new Error("Invalid card number from amex");
+      } else if (!/^\d{4}$/.test(cvv)) {
+        throw new Error("CVV invalid for Amex");
+      }
+    } else {
+      if (brand === "visa") {
+        if (!/^4[0-9]{15}$/.test(cardNumbers)) {
+          throw new Error("Invalid card number from visa");
+        } else if (!/^\d{3}$/.test(cvv)) {
+          throw new Error("CVV invalid for Visa");
+        }
+      } else {
+        if (brand === "mastercard") {
+          if (!/^5[1-5][0-9]{14}$/.test(cardNumbers)) {
+            throw new Error("Invalid card number from mastercard");
+          } else if (!/^\d{3}$/.test(cvv)) {
+            throw new Error("CVV invalid for Master Card");
+          }
+        }
+      }
+    }
+    if (installments < 1 || installments > 12) {
+      throw new Error("Invalid installment count");
+    } else if (
+      parseInt(y) < yCurrent ||
+      (parseInt(y) === yCurrent && parseInt(m) < mCurrent)
+    ) {
+      throw new Error("Expired card");
+    }
+
+    return true;
+  } else {
+    throw new Error("Invalid card brand");
+  }
+}
+```
 
 Code smells que podem ser identificados nesse trecho de código:
 
