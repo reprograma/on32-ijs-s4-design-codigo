@@ -36,4 +36,6 @@ Nessa sessão vamos refatorar e aplicar boas práticas de programação na funç
 
 ### Renomeando funções e variáveis
 
-<video src='https://github.com/reprograma/on32-ijs-s4-design-codigo/blob/main/assets/01-video-refactor-rename.movv' width="100%" />
+<video controls autosize="true">
+    <source src="https://github.com/reprograma/on32-ijs-s4-design-codigo/blob/main/assets/01-video-refactor-rename.mov" type="mov" />
+</video>
