@@ -42,4 +42,4 @@ Step:1 Create a folder in the repository where you can store all the images and 
 
 Step:2 Then copy the link of the video or image in the repository you are trying to show. For example, you want to show the video of the GAME PROCESS from the link: (https://github.com/Faizun-Faria/Thief-Robber-Landlord-Police/blob/main/Preview/gif_english.gif). You can simply write the following code in your README.md file to show the gif:
 
-![Refatorando nome de váriaveis e funções](../assets/01-video-refactor-rename.mov)
+![Refatorando nome de váriaveis e funções](https://github.com/reprograma/on32-ijs-s4-design-codigo/blob/main/assets/01-video-refactor-rename.mov)
