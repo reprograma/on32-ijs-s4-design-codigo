@@ -53,8 +53,8 @@ O que veremos na aula de hoje?
 
   - [Code Smells](./material/01-code-smells.md)
   - [Clean Code](./material/02-clean-code.md)
-  - [Princípios SOLID e DRY](./03-material/solid-dry.md)
-  - [Padrões de projeto](./04-material/design-patterns.md)
+  - [Princípios SOLID e DRY](./material/03-solid-dry.md)
+  - [Padrões de projeto](./material/04-design-patterns.md)
 
   - [Exercícios](#exercícios)
   - [Material da aula](#material-da-aula)
