@@ -58,9 +58,9 @@ Essas categorias ajudam a organizar e compreender os diferentes padrões de desi
 
 ### Quais padrões vamos aprender? 💖
 
-1. Factory
-2. Adapter
-3. Observer
+1. [Factory](./04-design-pattern-factory.md)
+2. [Adapter](./04-design-pattern-adapter.md)
+3. [Observer](./04-design-pattern-observer.md)
 
 ## Links úteis
 
