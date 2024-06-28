@@ -339,7 +339,7 @@ function validCard(
 
 ### Ainda dá para melhorar esse código?
 
-Sim, é possível por exemplo extrair todas as mensagens de erro para constantes, pensando em cenários de reaproveitamento de código, já que essas mensagens podem ser utilizadas em outras partes do sistema:
+Sim! É possível extrair todas as mensagens de erro para constantes, pensando em cenários de reaproveitamento de código, já que essas mensagens podem ser utilizadas em outras partes do sistema:
 
 ```typescript
 const CARD_BRAND_VISA = "visa";
