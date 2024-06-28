@@ -113,3 +113,7 @@ Nesse exemplo, PagarMeAdapter é o adaptador que permite que o OrderService, que
 - Se necessário a integração com novos meios de pagamento, bastata criar uma classe nova ou adaptador que implemente a interface `IPaymentGateway`. Desta maneira você está adicionando um novo tipo de adaptador sem quebrar o código cliente existente `OrderService`.
 
 - Este padrão ajuda a aderir ao princípio de inversão de dependência, permitindo que a classe cliente `OrderService` dependa de abstrações `IPaymentGateway` em vez de implementações concretas.
+
+## Links úteis
+
+- [Refactoring Guru - Adapter Pattern](https://refactoring.guru/pt-br/design-patterns/adapter)

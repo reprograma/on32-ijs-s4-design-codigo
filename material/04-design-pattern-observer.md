@@ -95,3 +95,7 @@ order.createOrder({ amount: 200, customerName: "Jane Doe" });
 - Desacopla os observadores `EmailNotification` e `SMSNotification` do publicador `Order`, permitindo que eles sejam modificados e reutilizados independentemente.
 - Permite uma comunicação eficiente entre objetos sem acoplamento direto, melhorando a modularidade e a flexibilidade do código.
 - Suporta a adição dinâmica e a remoção de observadores em tempo de execução, permitindo uma extensibilidade fácil do sistema.
+
+## Links úteis
+
+- [Refactoring Guru - Observer Pattern](https://refactoring.guru/pt-br/design-patterns/observer)
