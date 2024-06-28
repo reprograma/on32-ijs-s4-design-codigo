@@ -70,7 +70,7 @@ Nessa sessão vamos refatorar e aplicar boas práticas de programação na funç
 
 ### Ainda dá para melhorar esse código?
 
-Sim, é possível por exemplo extrair todas as mensagens de erro para constantes, pensando em cenários de reaproveitamento de código, já que essas mensagens podem ser utilizadas em outras partes do meu sistema:
+Sim, é possível por exemplo extrair todas as mensagens de erro para constantes, pensando em cenários de reaproveitamento de código, já que essas mensagens podem ser utilizadas em outras partes do sistema:
 
 ![Criando constantes de erros](../assets/05-code-smell-refactor-improves.png)
 
@@ -78,7 +78,7 @@ Sim, é possível por exemplo extrair todas as mensagens de erro para constantes
 
 ![Objeto como parâmetro de função](../assets/06-code-smell-refactor-object-as-parameter.png)
 
-Também é importante seguir padrões de escrita no nomes de funções e variáveis. Escolha um padrão e seja fiel a ele:
+Também é importante seguir padrões de escrita nos nomes de funções e variáveis. Escolha um padrão e seja fiel a ele:
 
 - PascalCase
 - camelCase
