@@ -20,7 +20,7 @@ Hoje trabalho como Engenheira de Software no Nubank.
 - 💌 Email: laisfrigerio.dev@gmail.com
 - 📸 Instagram: [@laisfrigerio](https://www.instagram.com/laisfrigerio/)
 - 💼 LinkedIn: [in/laisfrigerio](https://www.linkedin.com/in/laisfrigerio/)
-- 👩‍💻 Github:[/laisfrigerio](https://github.com/lasifrigerio)
+- 👩‍💻 Github:[/laisfrigerio](https://github.com/laisfrigerio)
 
 ### Instruções
 
@@ -53,8 +53,8 @@ O que veremos na aula de hoje?
 
   - [Code Smells](./material/code-smells.md)
   - [Clean Code](./material/clean-code.md)
-  - [Princípios SOLID e DRY](./material/solid-dry)
-  - [Padrões de projeto](./material/design-patterns)
+  - [Princípios SOLID e DRY](./material/solid-dry.md)
+  - [Padrões de projeto](./material/design-patterns.md)
 
   - [Exercícios](#exercícios)
   - [Material da aula](#material-da-aula)
