@@ -74,6 +74,83 @@ Todos essas regras estão dentro do arquivo `user.service.ts`
 - Em grupo de 5 pessoas
 - Analisar o código e refatorá-lo aplicando boas práticas de programação e/ou padrões de projeto
 
+### Tecnologias
+
+- Node `v18.12.1`
+
+### Executar o projeto
+
+- Instalação das dependências:
+
+```sh
+npm install
+```
+
+- Execução
+
+```sh
+npm run start:dev
+```
+
+### Acessando rota via CURL
+
+- GET lista de usuários:
+
+```sh
+curl -X GET 'http://localhost:3000/users'
+```
+
+- POST para criar um usuário novo (sucesso):
+
+```sh
+curl -X POST 'http://localhost:3000/users' -H 'Content-Type: application/json' --data '{
+  "name": "Maria Joana",
+  "email": "maria.joan@gmail.com",
+  "password": "Test@1234",
+  "cpf": "099.733.969-10",
+  "superPassword": "Super@1234",
+  "userType": "admin"}'
+```
+
+**Obs:** ao realizar um novo cadastro com esse e-mail e/ou CPF deve retornar uma exceção.
+
+- POST para criar usuário com CPF inválido:
+
+```sh
+curl -X POST 'http://localhost:3000/users' -H 'Content-Type: application/json' --data '{
+  "name": "Maria Joana",
+  "email": "maria.joan@gmail.com",
+  "password": "Test@1234",
+  "cpf": "099.733.969-11",
+  "superPassword": "Super@1234",
+}'
+```
+
+- POST para criar usuário com e-mail inválido:
+
+```sh
+curl -X POST 'http://localhost:3000/users' -H 'Content-Type: application/json' --data '{
+  "name": "Maria Joana",
+  "email": "maria.joan-gmail.com",
+  "password": "Test@1234",
+  "cpf": "051.063.760-41",
+  "superPassword": "Super@1234",
+}'
+```
+
+
+- POST para criar usuário com senha inválido:
+
+```sh
+curl -X POST 'http://localhost:3000/users' -H 'Content-Type: application/json' --data '{
+  "name": "Maria Joana",
+  "email": "maria.joan-gmail.com",
+  "password": "Test1234",
+  "cpf": "770.211.120-84",
+  "superPassword": "Super@1234",
+}'
+```
+
 ### Recomendações
 
 - Recomendo uma aluna do grupo fazer o fork e clonar o repositório
