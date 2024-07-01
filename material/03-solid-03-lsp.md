@@ -7,63 +7,119 @@ Esse princípio enfatiza o uso correto da herança e a consistência do comporta
 O código a seguir não aplica o princípio de substituição de Liskov pois a subclasse está alterando o comportamento da superclase:
 
 ```typescript
-class Discount {
-  constructor(public percentage: number) {}
-
-  calculate(price: number): number {
-    return price - price * (this.percentage / 100);
+export class Motor {
+  turnOn(): void {
+    console.log("Motor ligado");
   }
 }
 
-class NoDiscount extends Discount {
-  calculate(price: number): number {
-    return price; // Sem desconto
+export class Transport {
+  constructor(
+    public name: string,
+    public velocity: number,
+    public motor: Motor
+  ) {}
+
+  public turnMotorOn(): boolean {
+    this.motor.turnOn();
+    return true;
   }
 }
 
-function applyDiscount(discount: Discount, price: number): number {
-  return discount.calculate(price);
+export class Tank {
+  constructor(public isEmpty: boolean) {}
 }
 
-// Uso
-const discount = new Discount(10);
-const noDiscount = new NoDiscount(0);
+export class Car extends Transport {
+  constructor(
+    public name: string,
+    public velocity: number,
+    public motor: Motor,
+    public tank: Tank
+  ) {
+    super(name, velocity, motor);
+    this.tank = tank;
+  }
 
-console.log(applyDiscount(discount, 100)); // 90
-console.log(applyDiscount(noDiscount, 100)); // 100
+  public turnMotorOn(): boolean {
+    if (this.tank.isEmpty) {
+      return false;
+    }
+    return super.turnMotorOn();
+  }
+}
+
+export class Bicycle extends Transport {
+  constructor(
+    public name: string,
+    public velocity: number,
+    public motor: Motor
+  ) {
+    super(name, velocity, motor);
+  }
+}
+
+const bicycle = new Bicycle("Bike", 20, new Motor());
+bicycle.turnMotorOn(); // ligar motor da bicileta???
 ```
 
 Ao refatorar esse exemplo aplicando o princípio LSP:
 
 ```typescript
-interface DiscountStrategy {
-  calculate(price: number): number;
-}
-
-class PercentageDiscount implements DiscountStrategy {
-  constructor(private percentage: number) {}
-
-  calculate(price: number): number {
-    return price - price * (this.percentage / 100);
+export class Motor {
+  turnOn(): void {
+    console.log("Motor ligado");
   }
 }
 
-class NoDiscount implements DiscountStrategy {
-  calculate(price: number): number {
-    return price; // Sem desconto
+export class Transport {
+  constructor(public name: string, public velocity: number) {}
+}
+
+export class MotorizedTransport extends Transport {
+  constructor(
+    public name: string,
+    public velocity: number,
+    public motor: Motor
+  ) {}
+
+  public turnMotorOn(): boolean {
+    this.motor.turnOn();
+    return true;
   }
 }
 
-function applyDiscount(discount: DiscountStrategy, price: number): number {
-  return discount.calculate(price);
+export class Tank {
+  constructor(public isEmpty: boolean) {}
 }
 
-// Uso
-const discount = new PercentageDiscount(10);
-const noDiscount = new NoDiscount();
+export class Car extends MotorizedTransport {
+  constructor(
+    public name: string,
+    public velocity: number,
+    public motor: Motor,
+    public tank: Tank
+  ) {
+    super(name, velocity, motor);
+    this.tank = tank;
+  }
 
-console.log(applyDiscount(discount, 100)); // 90
-console.log(applyDiscount(noDiscount, 100)); // 100
+  public turnMotorOn(): boolean {
+    if (this.tank.isEmpty) {
+      return false;
+    }
+    return super.turnMotorOn();
+  }
+}
+
+export class Bicycle extends Transport {
+  constructor(public name: string, public velocity: number) {
+    super(name, velocity);
+  }
+}
+
+const bicycle = new Bicycle("Bike", 20);
+bicycle.turnMotorOn(); // ligar motor da bicileta???
 ```
 
 O Princípio de Substituição de Liskov é essencial para garantir que o uso da herança em seu código seja correto e mantenha a integridade do comportamento do sistema. Ao aplicar LSP, você cria um código mais robusto e menos propenso a erros ao utilizar polimorfismo e herança.
