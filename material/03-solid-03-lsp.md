@@ -4,7 +4,13 @@ No princípio de Susbtiuição de Liskov, os subtipos devem ser substituíveis p
 
 Esse princípio enfatiza o uso correto da herança e a consistência do comportamento, assegurando que as subclasses preservem a funcionalidade da classe base.
 
-O código a seguir não aplica o princípio de substituição de Liskov pois a subclasse está alterando o comportamento da superclase:
+No seguinte exemplo, a classe `Bicyle` herda todos os atributos e métodos da classe `Transport`. Entretanto, uma bicicleta conversional não tem `Motor` e, portanto, esse exemplo viola o princípio de substituição de Liskov:
+
+<h1>
+  <img src="../assets/uml/lsp-wrong-example.jpg" alt="Diagrama de classe para um exemplo que viola o princípio de substituiçãod de Liskov" width="500" height="500">
+</h1>
+
+Veja o exemplo em código:
 
 ```typescript
 export class Motor {
@@ -63,7 +69,13 @@ const bicycle = new Bicycle("Bike", 20, new Motor());
 bicycle.turnMotorOn(); // ligar motor da bicileta???
 ```
 
-Ao refatorar esse exemplo aplicando o princípio LSP:
+Veja como seria o correto uso de herança para aplicar o princípio de substituição de Liskov:
+
+<h1>
+  <img src="../assets/uml/lsp-good-example.jpg" alt="Diagrama de classe para um exemplo que aplica o princípio de substituiçãod de Liskov" width="500" height="500">
+</h1>
+
+Código desse exemplo:
 
 ```typescript
 export class Motor {
@@ -119,7 +131,6 @@ export class Bicycle extends Transport {
 }
 
 const bicycle = new Bicycle("Bike", 20);
-bicycle.turnMotorOn(); // ligar motor da bicileta???
 ```
 
 O Princípio de Substituição de Liskov é essencial para garantir que o uso da herança em seu código seja correto e mantenha a integridade do comportamento do sistema. Ao aplicar LSP, você cria um código mais robusto e menos propenso a erros ao utilizar polimorfismo e herança.
