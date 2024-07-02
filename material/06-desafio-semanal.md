@@ -1,5 +1,3 @@
-![Tarefa](/Archive/99.%20Recursos/01.%20Imagens/tags/atividade-exercicio.svg)
-
 # Desafio Semanal
 
 ### Objetivos de aprendizagem do desafio 🎯
