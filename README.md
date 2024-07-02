@@ -60,6 +60,8 @@ O que veremos na aula de hoje?
   - [Material da aula](#material-da-aula)
   - [Links Úteis](./material/05-links-uteis.md)
 
+- [Desafio Semanal](./material/06-desafio-semanal.md)
+
 ---
 
 ### Exercícios
