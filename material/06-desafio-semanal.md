@@ -12,11 +12,6 @@
 
 Nesta semana, o desafio é refatorar a aplicação desenvolvida anteriormente, aplicando práticas recomendadas para criar um design de código claro e eficiente. Além disso, serão aplicados os princípios SOLID (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion), DRY (Don't Repeat Yourself) e alguns padrões de design, como Factory, Adapter e Observer.
 
-Requisitos de negócio:
-
-- Adicionar a capacidade de realizar pagamentos de contas por PIX ou número de boleto.
-- O cliente deve possuir saldo em conta ou limite no cheque especial para efetuar a transação.
-
 Sugestão de Estrutura de Pastas:
 
 ```lua
