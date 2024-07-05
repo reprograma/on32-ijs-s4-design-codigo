@@ -40,8 +40,6 @@ Na estrutura sugerida:
 - `src/services/`: Armazena os serviços responsáveis por implementar a lógica de negócios da aplicação, mantendo a separação de responsabilidades e facilitando a reutilização do código.
 - `src/index.ts`: Arquivo principal que inicializa o servidor e conecta-se ao banco de dados, fornecendo a entrada para a aplicação.
 
-#### Para profa:
-
 #### Exemplos de Aplicação dos Princípios e Padrões:
 
 1. **SOLID**:
