@@ -1,0 +1,24 @@
+{
+  "name": "reprograma-bank",
+  "version": "1.0.0",
+  "description": "Projeto bancário para Reprograma",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "dev": "ts-node-dev src/index.ts"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^14.14.41",
+    "ts-node": "^10.2.1",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.4"
+  },
+  "author": "Seu Nome",
+  "license": "MIT"
+}

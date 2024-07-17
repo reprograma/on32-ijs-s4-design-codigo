@@ -8,19 +8,6 @@ Turma Online ON32 - Imersão JavaScript | Semana 4 | 2024 | Professora Lais Frig
 
 ### Professora Lais
 
-<h1>
-  <img src="./assets/lais.png" alt="foto lais" width="200">
-</h1>
-
-Eu sou engenheira de software, professora de programação e compartilho conteúdo técnico em minhas redes sociais!
-
-Fui aluna da segunda turma do curso Eudca{devas} em 2023!
-Hoje trabalho como Engenheira de Software no Nubank.
-
-- 💌 Email: laisfrigerio.dev@gmail.com
-- 📸 Instagram: [@laisfrigerio](https://www.instagram.com/laisfrigerio/)
-- 💼 LinkedIn: [in/laisfrigerio](https://www.linkedin.com/in/laisfrigerio/)
-- 👩‍💻 Github:[/laisfrigerio](https://github.com/laisfrigerio)
 
 ### Instruções
 
@@ -76,3 +63,26 @@ O que veremos na aula de hoje?
 <p align="center">
 Desenvolvido com :purple_heart: por laisfrigerio
 </p>
+
+Resumo das Alterações
+Este Pull Request visa melhorar a estruturação e a funcionalidade da aplicação através da reorganização das pastas, implementação de métodos de pagamento adicionais (boleto e PIX) e aplicação de princípios sólidos de design de código.
+
+Alterações Implementadas
+Estruturação de Pastas
+
+Organização em Pastas Específicas: Reorganização dos arquivos em services, controllers, modules, models, interfaces.
+Implementação de Métodos de Pagamento
+
+Adição de Boleto e PIX: Integração de novos métodos de pagamento para oferecer mais opções aos clientes.
+Aplicação dos Princípios SOLID
+
+Single Responsibility Principle (SRP): Cada classe e método tem uma única responsabilidade definida.
+Liskov Substitution Principle (LSP): Substituição de classes base (como Account) por suas subclasses (CurrentAccount, SavingsAccount).
+Interface Segregation Principle (ISP): Interfaces específicas para diferentes contextos, como AccountOperations e PaymentMethod.
+Dependency Inversion Principle (DIP): Injeção de dependências para reduzir o acoplamento e facilitar testes unitários.
+Padrões de Design Implementados
+
+Adapter: Implementação de DTOs (CurrentAccountDTO, SavingsAccountDTO) para adaptação de dados entre camadas da aplicação.
+Princípios de Código Limpo e Eficiente
+
+DRY (Don't Repeat Yourself): Redução da duplicação de código através da reutilização de métodos e padrões.
